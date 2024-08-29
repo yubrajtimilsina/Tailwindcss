@@ -70,5 +70,23 @@
         </div>
     </div>
    </header>
+
+   <script>
+     let lightIcon = document.getElementById('light')
+     let darkIcon = document.getElementById('dark')
+     changeTheme(localStorage.theme)
+     function changeTheme(theme){
+        if(theme === "light"){
+                document.documentElement.classList.remove('dark')
+                lightIcon.classList.add('hidden')
+                darkIcon.classList.remove('hidden')
+            }else if(theme === 'dark'){
+                document.documentElement.classList.add('dark')
+                lightIcon.classList.remove('hidden')
+                darkIcon.classList.add('hidden')
+            }
+            localStorage.setItem('theme', theme)
+     }
+   </script>
 </body>
 </html>
